@@ -16,7 +16,7 @@ class TestToPerform(unittest.TestCase):
         print("/::" + response)
         self.assertEqual(response.status_code, 200)
 
-    def test_page(self):
+    def test_page1(self):
         response = self.app.get('/test', follow_redirects=True)
         print(response)
         print("/::" + response)

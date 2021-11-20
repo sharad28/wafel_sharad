@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 @app.route('/test', methods=['GET', 'POST'])
-def index():
+def index1():
     return "CICD is completed"
 
 
