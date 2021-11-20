@@ -8,5 +8,9 @@ def index():
     return "CICD is completed"
 
 
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return "CICD is running"
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5000)
