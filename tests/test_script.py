@@ -23,7 +23,7 @@ class TestToPerform(unittest.TestCase):
               "************************"
               "*********************")
 
-        print(response.text)
+        print(response.json)
         self.assertEqual(response.status_code, 200)
 
 if __name__ == '__main__':
