@@ -1,5 +1,5 @@
 import unittest
-
+import requests
 from app import app
 import os
 
@@ -13,13 +13,17 @@ class TestToPerform(unittest.TestCase):
 
     def test_page(self):
         response = self.app.get('/', follow_redirects=True)
-        print("/::" + response)
+        print(response)
         self.assertEqual(response.status_code, 200)
 
     def test_page1(self):
         response = self.app.get('/test', follow_redirects=True)
         print(response)
-        print("/::" + response)
+        print("*******************"
+              "************************"
+              "*********************")
+
+        print(response.text)
         self.assertEqual(response.status_code, 200)
 
 if __name__ == '__main__':
