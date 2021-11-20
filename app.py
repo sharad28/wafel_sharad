@@ -1,5 +1,8 @@
 from flask import Flask
 
+import os
+
+from wsgiref import simple_server
 app = Flask(__name__)
 
 
@@ -12,5 +15,12 @@ def index1():
 def index():
     return "CICD is running2"
 
+port = int(os.getenv("PORT", 5001))
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=5000)
+    host = '0.0.0.0'
+    # app.run()
+    httpd = simple_server.make_server(host=host, port=port, app=app)
+    # httpd = simple_server.make_server(host='127.0.0.1', port=5000, app=app)
+    # print("Serving on %s %d" % (host, port))
+    httpd.serve_forever()
