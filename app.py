@@ -10,7 +10,7 @@ def index1():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return "CICD is running"
+    return "CICD is running1"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0",port=5000)
